@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <!-- Primary SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
   <title>Jostas Painting Services | Professional Painters in South Africa</title>
   <meta name="description" content="Jostas Painting Services — over 20 years of premium residential and commercial painting. Interior, exterior, wallpaper, and color consultation. Get your free quote today.">
   <meta name="keywords" content="painting services, residential painting, commercial painting, interior painting, exterior painting, South Africa, professional painters">
@@ -48,7 +48,7 @@
 
 <body>
 
-    <!-- NAVBAR -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg" id="mainNav">
   <div class="container-fluid px-4 px-lg-5">
 
@@ -79,24 +79,8 @@
 
   </div>
 </nav>
-<!-- /NAVBAR --> 
+<!-- /NAVBAR -->
 
-<section class="hero-section d-flex align-items-center">
-    <div class="container-fluid px-0 hero-content">
-        <div class="row w-100 mx-0">
-            <div class="col-lg-6 d-flex align-items-center hero-text-wrapper min-vh-100 py-5">
-                <div>
-                    <h1>Adding color to your world</h1>
-                    <a href="services.html#contact" class="btn btn-primary cta-button-custom rounded-1">Get a Free Quote</a>
-                </div>
-            </div>
-            </div>
-    </div>
-    
-    <div class="hero-image-container d-none d-lg-block">
-        <img src="/assets/images/Image9.png" alt="Painter adding color to a wall" class="img-fluid">
-    </div>
-</section> 
 
 <!-- HERO SECTION -->
 <section class="hero-section" aria-label="Hero banner">
@@ -164,6 +148,7 @@
 </section>
 <!-- /HERO SECTION -->
 
+
 <!-- SERVICES STRIP -->
 <section class="services-strip" aria-label="Services overview">
   <div class="service-cards-row">
@@ -212,7 +197,8 @@
 </section>
 <!-- /SERVICE CARDS STRIP -->
 
-    <!-- ABOUT SECTION -->
+
+<!-- ABOUT SECTION -->
 <section class="about-section" aria-label="About Jostas Painting Services">
   <div class="about-grid">
 
@@ -256,6 +242,10 @@
       </a>
 
     </div>
+
+  </div>
+</section>
+<!-- /ABOUT SECTION -->
 
 
 <!-- PORTFOLIO GALLERY  (Filterable) -->
@@ -365,7 +355,8 @@
 </section>
 <!-- /PORTFOLIO GALLERY -->
 
-    <!-- FOOTER -->
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <p>
     &copy; <span id="footerYear"></span> <span>Jostas Painting Services</span>.
@@ -374,9 +365,67 @@
 </footer>
 <!-- /FOOTER -->
 
-  </div>
-</section>
+
+<!-- SCRIPTS -->
+<!-- Bootstrap 5 JS bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS — Animate on Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  // Scroll animations initialization
+  AOS.init({
+    duration: 650,
+    once: true,
+    offset: 80,
+    easing: 'ease-out-cubic'
+  });
+
+  // Navbar scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Footer year auto-update
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Portfolio gallery filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state on buttons
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filter;
+
+      galleryItems.forEach(item => {
+        const match = filter === 'all' || item.dataset.category === filter;
+        if (match) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Parallax effect on hero image
+  const heroImg = document.querySelector('.hero-image-col img');
+  if (heroImg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      heroImg.style.transform = `translateY(${scrolled * 0.08}px)`;
+    }, { passive: true });
+  }
+</script>
 
 </body>
 </html>
