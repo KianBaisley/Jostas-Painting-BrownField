@@ -178,6 +178,195 @@
     <i class="fab fa-instagram"></i>
   </a>
 
+  <!-- CONTACT SECTION -->
+<section class="contact-section" id="contact" aria-label="Contact form">
+
+  <div class="contact-grid">
+
+    <!-- Left: Contact info -->
+    <div data-aos="fade-right" data-aos-duration="700">
+
+      <p class="section-label">Get In Touch</p>
+      <div class="section-divider"></div>
+
+      <h2>Ready to transform your space?</h2>
+
+      <p style="margin-bottom: 2rem;">
+        Fill in the form and we'll get back to you within one business day with
+        a free, no-obligation quote tailored to your project.
+      </p>
+
+      <!-- Contact detail items -->
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Phone</strong>
+          <span>+27 (0)31 694 8710</span>
+        </div>
+      </div>
+
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <span>info@jostaspainting.co.za</span>
+        </div>
+      </div>
+
+      <div class="contact-detail-item">
+        <div class="contact-detail-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Area Served</strong>
+          <span>Durban, Pietermaritzburg &amp; surrounding areas</span>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://wa.me/27818428744"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-btn"
+           aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/JostasPainting"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-btn"
+           aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/jostaspainting"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-btn"
+           aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+    <!-- /Contact info -->
+
+    <!-- Right: Contact form -->
+    <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="700">
+
+      <div class="contact-form-card">
+
+        <!-- Success message (hidden initially) -->
+        <div class="form-success" id="formSuccess" role="alert">
+          <i class="fa-solid fa-circle-check"></i>
+          <h4>Message sent!</h4>
+          <p>Thank you for reaching out. We'll be in touch within one business day.</p>
+        </div>
+
+        <!-- The form itself -->
+        <form id="contactForm" novalidate>
+
+          <!-- Service selection -->
+          <div class="form-field" id="field-service">
+            <label for="serviceSelect">Service</label>
+            <div class="select-wrapper">
+              <select class="form-control form-select" id="serviceSelect" name="service">
+                <option value="" disabled selected>Select a service&hellip;</option> <!-- Placeholder option -->
+                <option value="residential">Residential Painting</option>
+                <option value="commercial">Commercial Painting</option>
+                <option value="interior">Interior Painting</option>
+                <option value="exterior">Exterior Painting</option>
+                <option value="wallpaper">Wallpaper Installation</option>
+                <option value="consultation">Colour Consultation</option>
+              </select>
+            </div>
+            <p class="form-error-msg" id="error-service">Please select a service.</p>
+          </div>
+
+          <!-- Message textarea -->
+          <div class="form-field" id="field-message">
+            <label for="messageInput">Details</label>
+            <textarea
+              class="form-control"
+              id="messageInput"
+              name="message"
+              rows="3"
+              placeholder="Tell us about your project — size, timeline, any specifics…"
+            ></textarea>
+            <p class="form-error-msg" id="error-message">Please describe your project briefly.</p>
+          </div>
+
+          <!-- Name -->
+          <div class="form-field" id="field-name">
+            <label for="nameInput">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              name="name"
+              placeholder="e.g. John Doe"
+              autocomplete="name"
+            >
+            <p class="form-error-msg" id="error-name">Please enter your full name.</p>
+          </div>
+
+          <!-- Email -->
+          <div class="form-field" id="field-email">
+            <label for="emailInput">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              name="email"
+              placeholder="e.g. johndoe@gmail.com"
+              autocomplete="email"
+            >
+            <p class="form-error-msg" id="error-email">Please enter a valid email address.</p>
+          </div>
+
+          <!-- Phone (South African format) -->
+          <div class="form-field" id="field-phone">
+            <label for="phoneInput">
+              Phone Number
+              <span style="font-weight:400; text-transform:none; letter-spacing:0; font-size:0.75rem; color:var(--clr-text-subtle);"></span>
+            </label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phoneInput"
+              name="phone"
+              placeholder="e.g. 082 000 0000 or +27 82 000 0000"
+              autocomplete="tel"
+              maxlength="18"
+            >
+            <p class="form-error-msg" id="error-phone">
+              Enter a valid South African number (e.g. 081&nbsp;000&nbsp;0000 or +27&nbsp;82&nbsp;000&nbsp;0000).
+            </p>
+          </div>
+
+          <!-- Submit row -->
+          <div class="form-submit-row">
+            <button type="submit" class="btn-cta" id="submitBtn">
+              Send Message
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+    <!-- /Contact form -->
+
+  </div>
+
+</section>
+<!-- /CONTACT SECTION -->
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <p>
