@@ -28,58 +28,137 @@
         </div>
     </div>
 </nav>
- <div class="container-fluid py-5 page-content-container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-xl-6 px-5">
-            
-            <h5 class="text-uppercase mb-4" style="color: var(--bs-dark); opacity: 0.6;">Making color simple</h5>
-            
-            <h1 class="display-3 fw-bold text-dark mb-5">About us</h1>
-            
-            <p class="mb-5 text-secondary" style="line-height: 1.8;">
-                Jostas comortes ere erecuntled are'y ente eretases. Ateniem guamhuiz iguzen quarmus tewed esri 
-                quarsimus tewed esri. Eretases Ateniem guamhuiz iguzen quarmus tewed esri.
-            </p>
 
-            <h2 class="display-6 fw-bold text-dark mb-4">Our mission</h2>
-            
-            <h3 class="fw-normal text-secondary mb-5" style="color: var(--color-cta) !important;">
-                Adding color to your world
-            </h3>
-            
-            <div class="row g-4 mb-5">
-                
-                <div class="col-md-6">
-                    <div class="team-photo-container rounded-3 overflow-hidden" style="height: 350px; background-color: #d8c2b0;">
-                        <img src="/assets/images/Image11.jpg" alt="Team Member 1" class="img-fluid w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="team-photo-container rounded-3 overflow-hidden" style="height: 350px; background-color: #e8d0bd;">
-                        <img src="/assets/images/Image10.jpg" alt="Team Member 2" class="img-fluid w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-            </div>
+<!--ABOUT CONTENT-->
+<section class="about-page-section" aria-label="About content">
 
-            <hr class="my-5" style="border-top: 2px solid #eee;">
-            
-            <h2 class="display-6 fw-bold text-dark mb-4">Portfolio</h2>
+  <div class="about-page-grid">
 
-            <div class="row g-3">
-                <div class="col-6 col-md-3">
-                    <div class="portfolio-thumb-container rounded-3 overflow-hidden" style="height: 150px; background-color: #f7e9d7;"><img src="/assets/images/Image7.png" alt="portfolio1" class="img-fluid object-fit-cover"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="portfolio-thumb-container rounded-3 overflow-hidden" style="height: 150px; background-color: #e0b08e;"><img src="/assets/images/Image4.png" alt="portfolio2" class="img-fluid object-fit-cover"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="portfolio-thumb-container rounded-3 overflow-hidden" style="height: 150px; background-color: #b97652;"><img src="/assets/images/Image8.png" alt="portfolio3" class="img-fluid h-100 object-fit-cover"></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="portfolio-thumb-container rounded-3 overflow-hidden" style="height: 150px; background-color: #8a4e32;"><img src="/assets/images/Image6.png" alt="portfolio4" class="img-fluid h-100 object-fit-cover"></div>
-                </div>
-            </div>
+    <!-- Left: Main text content -->
+    <div>
+
+      <!-- Intro paragraph -->
+      <p style="font-size: 1.08rem; line-height: 1.85; margin-bottom: 1.75rem;"
+         data-aos="fade-up">
+        At Jostas Painting Services, we are a proudly family-owned business with more than
+        two decades of hands-on experience delivering top-tier painting solutions to both
+        homeowners and businesses. Our passion lies in the details — from the first
+        brushstroke to the final finish, we hold ourselves to the highest standards of
+        workmanship and professionalism.
+      </p>
+
+      <p style="margin-bottom: 2.5rem;"
+         data-aos="fade-up" data-aos-delay="60">
+        Our experienced team of painters combines premium-quality materials with modern
+        techniques to breathe new life into any space, no matter the scale of the project.
+        At the heart of everything we do is a genuine commitment to our customers —
+        listening to your vision and making it a reality, every single time.
+      </p>
+
+      <!-- Mission statement block -->
+      <div class="mission-block"
+           data-aos="fade-up" data-aos-delay="80">
+        <h3>Our Mission</h3>
+        <p>Adding color to your world — transforming spaces with precision, care, and paint.</p>
+      </div>
+
+      <!-- Team photos -->
+      <div class="team-grid"
+           data-aos="fade-up" data-aos-delay="100">
+
+        <div class="team-img-wrap">
+          <img
+            src="/assets/images/Image11.jpg"
+            alt="Jostas team member at work on a residential project"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="team-img-wrap">
+          <img
+            src="/assets/images/Image10.jpg"
+            alt="Jostas team member applying a fresh coat of paint"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+      <!-- /Team photos -->
+
+    </div>
+    <!-- /Left col -->
+
+    <!-- Right: Values list -->
+    <div data-aos="fade-left" data-aos-delay="120">
+
+      <p class="section-label">Why Choose Us</p>
+      <div class="section-divider"></div>
+
+      <!-- Value cards — stacked -->
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+
+        <!-- Value 1 -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--clr-ivory-card); border-radius: var(--radius-md); border: 1px solid rgba(94,184,160,0.12); box-shadow: var(--shadow-card); transition: transform var(--trans-spring), box-shadow var(--trans-base);"
+             onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
+             onmouseleave="this.style.transform=''; this.style.boxShadow='var(--shadow-card)'">
+          <div style="width:44px; height:44px; border-radius:50%; background:var(--clr-seafoam-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fa-solid fa-award" style="color:var(--clr-seafoam-dark); font-size:1.1rem;"></i>
+          </div>
+          <div>
+            <strong style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--clr-charcoal); display:block; margin-bottom:0.25rem;">20+ Years Experience</strong>
+            <span style="font-size:0.875rem; color:var(--clr-text-muted);">Trusted by hundreds of homeowners and businesses across South Africa.</span>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--clr-ivory-card); border-radius: var(--radius-md); border: 1px solid rgba(94,184,160,0.12); box-shadow: var(--shadow-card); transition: transform var(--trans-spring), box-shadow var(--trans-base);"
+             onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
+             onmouseleave="this.style.transform=''; this.style.boxShadow='var(--shadow-card)'">
+          <div style="width:44px; height:44px; border-radius:50%; background:var(--clr-seafoam-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fa-solid fa-star" style="color:var(--clr-seafoam-dark); font-size:1.1rem;"></i>
+          </div>
+          <div>
+            <strong style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--clr-charcoal); display:block; margin-bottom:0.25rem;">Premium Materials</strong>
+            <span style="font-size:0.875rem; color:var(--clr-text-muted);">We only use top-grade paints and coatings for durable, beautiful results.</span>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--clr-ivory-card); border-radius: var(--radius-md); border: 1px solid rgba(94,184,160,0.12); box-shadow: var(--shadow-card); transition: transform var(--trans-spring), box-shadow var(--trans-base);"
+             onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
+             onmouseleave="this.style.transform=''; this.style.boxShadow='var(--shadow-card)'">
+          <div style="width:44px; height:44px; border-radius:50%; background:var(--clr-seafoam-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fa-solid fa-shield-halved" style="color:var(--clr-seafoam-dark); font-size:1.1rem;"></i>
+          </div>
+          <div>
+            <strong style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--clr-charcoal); display:block; margin-bottom:0.25rem;">Satisfaction Guarantee</strong>
+            <span style="font-size:0.875rem; color:var(--clr-text-muted);">We're not done until you're completely happy with every wall, edge, and finish.</span>
+          </div>
+        </div>
+
+        <!-- Value 4 -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--clr-ivory-card); border-radius: var(--radius-md); border: 1px solid rgba(94,184,160,0.12); box-shadow: var(--shadow-card); transition: transform var(--trans-spring), box-shadow var(--trans-base);"
+             onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
+             onmouseleave="this.style.transform=''; this.style.boxShadow='var(--shadow-card)'">
+          <div style="width:44px; height:44px; border-radius:50%; background:var(--clr-seafoam-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fa-solid fa-handshake" style="color:var(--clr-seafoam-dark); font-size:1.1rem;"></i>
+          </div>
+          <div>
+            <strong style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--clr-charcoal); display:block; margin-bottom:0.25rem;">Family Values</strong>
+            <span style="font-size:0.875rem; color:var(--clr-text-muted);">We treat every project — and every client — like family.</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- /Value cards -->
+
+    </div>
+    <!-- /Right col -->
+
+  </div>
+
+</section>
+<!-- /ABOUT CONTENT -->
 
         </div>
     </div>
