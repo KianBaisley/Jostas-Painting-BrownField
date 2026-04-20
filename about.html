@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-     <!-- Primary SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
   <title>About Us | Jostas Painting Services</title>
   <meta name="description" content="Learn about Jostas Painting Services — a family-owned business with over 20 years of expert painting experience. Meet our team and discover our mission.">
   <meta name="keywords" content="about Jostas Painting, family-owned painting company, professional painters, painting history, South Africa painters">
@@ -38,7 +38,8 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
+
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg" id="mainNav">
   <div class="container-fluid px-4 px-lg-5">
 
@@ -58,7 +59,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <div class="navbar-nav">
         <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link active" href="about.html">About</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="services.html#contact">Contact</a>
       </div>
@@ -67,6 +68,21 @@
   </div>
 </nav>
 <!-- /NAVBAR -->
+
+
+<!-- PAGE HERO -->
+<header class="page-hero" id="about" aria-label="About page header">
+
+  <p class="section-label"
+     data-aos="fade-up">Making color simple</p>
+
+  <h1 data-aos="fade-up" data-aos-delay="60">
+    About us
+  </h1>
+
+</header>
+<!-- /PAGE HERO -->
+
 
 <!--ABOUT CONTENT-->
 <section class="about-page-section" aria-label="About content">
@@ -199,6 +215,70 @@
 </section>
 <!-- /ABOUT CONTENT -->
 
+
+<!-- PORTFOLIO GALLERY -->
+<section class="portfolio-section" aria-label="Portfolio gallery"
+         style="margin-top: var(--space-lg);">
+  <div class="section-inner">
+
+    <div data-aos="fade-up">
+      <p class="section-label">Our Work</p>
+      <div class="section-divider"></div>
+      <h2 style="font-size: clamp(2rem, 3vw, 3rem); margin-bottom: 0.5rem;">Portfolio</h2>
+      <p style="max-width: 520px; margin-bottom: 0;">
+        A selection of our completed painting projects across South Africa.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="portfolio-filters" role="tablist"
+         data-aos="fade-up" data-aos-delay="80">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="interior" role="tab" aria-selected="false">Interior</button>
+      <button class="filter-btn" data-filter="exterior" role="tab" aria-selected="false">Exterior</button>
+      <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false">Commercial</button>
+    </div>
+
+    <!-- Gallery grid -->
+    <div class="gallery-grid" id="galleryGrid"
+         data-aos="fade-up" data-aos-delay="120">
+
+      <div class="gallery-item featured" data-category="interior">
+        <img src="/assets/images/Image7.png" alt="Interior room painting showcase" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-tag">Interior</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="exterior">
+        <img src="/assets/images/Image4.png" alt="Exterior residential painting" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-tag">Exterior</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="commercial">
+        <img src="/assets/images/Image8.png" alt="Commercial building painting project" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-tag">Commercial</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="interior">
+        <img src="/assets/images/Image6.png" alt="Interior detail painting" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-tag">Interior</span>
+        </div>
+      </div>
+
+    </div>
+    <!-- /Gallery grid -->
+
+  </div>
+</section>
+<!-- /PORTFOLIO GALLERY -->
+
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <p>
@@ -208,8 +288,42 @@
 </footer>
 <!-- /FOOTER -->
 
-        </div>
-    </div>
-</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  // AOS Init
+  AOS.init({ duration: 650, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+  // Navbar scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Gallery filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filter;
+      galleryItems.forEach(item => {
+        const match = filter === 'all' || item.dataset.category === filter;
+        item.classList.toggle('hidden', !match);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
