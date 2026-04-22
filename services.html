@@ -270,7 +270,7 @@
         </div>
 
         <!-- The form itself -->
-        <form id="contactForm" novalidate>
+        <form id="contactForm" autocomplete="off" novalidate >
 
           <!-- Service selection -->
           <div class="form-field" id="field-service">
@@ -311,7 +311,7 @@
               id="nameInput"
               name="name"
               placeholder="e.g. John Doe"
-              autocomplete="name"
+              autocomplete="off"
             >
             <p class="form-error-msg" id="error-name">Please enter your full name.</p>
           </div>
@@ -325,7 +325,7 @@
               id="emailInput"
               name="email"
               placeholder="e.g. johndoe@gmail.com"
-              autocomplete="email"
+              autocomplete="off"
             >
             <p class="form-error-msg" id="error-email">Please enter a valid email address.</p>
           </div>
@@ -342,7 +342,7 @@
               id="phoneInput"
               name="phone"
               placeholder="e.g. 082 000 0000 or +27 82 000 0000"
-              autocomplete="tel"
+              autocomplete="off"
               maxlength="18"
             >
             <p class="form-error-msg" id="error-phone">
@@ -511,6 +511,7 @@
         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       return;
+      
     }
 
     // If valid — simulate submission (replace with real API call)
@@ -520,9 +521,11 @@
 
     // Simulate async send (replace setTimeout with actual fetch/API call)
     setTimeout(() => {
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('contactForm').reset(); // Clear form after submission
+      document.getElementById('contactForm').style.display = 'none'; // Hide form
+      document.getElementById('formSuccess').style.display = 'block'; // Show success message
     }, 1200);
+    
   });
 
   // Auto-scroll to contact section if URL has #contact hash
