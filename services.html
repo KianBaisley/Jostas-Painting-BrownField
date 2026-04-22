@@ -470,23 +470,23 @@
     // Accept normalized (digits only, leading 0 or +27) or the original with spaces
     const phoneErr = !SA_PHONE_REGEX.test(phoneNorm) && !SA_PHONE_REGEX.test(phoneRaw);
     setFieldError('field-phone', 'phoneInput', phoneErr);
-    if (phoneErr) valid = false;
+    if (phoneErr) valid = false; // Only mark as error if it fails both raw and normalized checks
 
     return valid;
   }
 
   // Live validation — clear errors as user fixes them
-  ['serviceSelect', 'messageInput', 'nameInput', 'emailInput', 'phoneInput'].forEach(id => {
+  ['serviceSelect', 'messageInput', 'nameInput', 'emailInput', 'phoneInput'].forEach(id => { // For each input, listen for changes and re-validate just that field to clear errors
     const el = document.getElementById(id);
     const evtType = id === 'serviceSelect' ? 'change' : 'input';
     el.addEventListener(evtType, () => {
       // Re-run validation silently on the single field
       const fieldMap = {
-        serviceSelect: ['field-service', 'serviceSelect'],
-        messageInput:  ['field-message', 'messageInput'],
-        nameInput:     ['field-name',    'nameInput'],
-        emailInput:    ['field-email',   'emailInput'],
-        phoneInput:    ['field-phone',   'phoneInput'],
+        serviceSelect: ['field-service', 'serviceSelect'], // select
+        messageInput:  ['field-message', 'messageInput'], // textarea
+        nameInput:     ['field-name',    'nameInput'], // text input
+        emailInput:    ['field-email',   'emailInput'], // email input
+        phoneInput:    ['field-phone',   'phoneInput'], // tel input
       };
       // Only clear errors (don't add new ones while user is typing)
       const [fieldId, inputId] = fieldMap[id];
@@ -506,19 +506,20 @@
 
     if (!isValid) {
       // Scroll to first error for UX
-      const firstError = document.querySelector('.has-error');
+      const firstError = document.querySelector('.has-error'); // Find first field with error
       if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
       }
       return;
       
     }
 
     // If valid — simulate submission (replace with real API call)
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled = true;
+    const submitBtn = document.getElementById('submitBtn'); // Disable button and show sending state
+    submitBtn.textContent = 'Sending…'; // Change button text to indicate sending
+    submitBtn.disabled = true; // Prevent multiple submissions
 
+  
     // Simulate async send (replace setTimeout with actual fetch/API call)
     setTimeout(() => {
       document.getElementById('contactForm').reset(); // Clear form after submission
@@ -529,7 +530,7 @@
   });
 
   // Auto-scroll to contact section if URL has #contact hash
-  if (window.location.hash === '#contact') {
+  if (window.location.hash === '#contact') { // Delay scroll to ensure page has rendered
     setTimeout(() => {
       document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
     }, 400);
